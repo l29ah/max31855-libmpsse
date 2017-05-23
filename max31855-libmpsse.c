@@ -44,6 +44,7 @@ int main(void)
 #endif
 			printf("%.2f\n", 0.25 * (int16_t)otemp / 4);
 			free(data);
+			retval = EXIT_SUCCESS;
 		} else {
 			fprintf(stderr, "Failed to read from the chip.\n");
 		}
