@@ -44,9 +44,11 @@ int main(void)
 #endif
 			printf("%.2f\n", 0.25 * (int16_t)otemp / 4);
 			free(data);
-		} else puts("loh");
+		} else {
+			fprintf(stderr, "Failed to read from the chip.\n");
+		}
 	} else {
-		printf("Failed to initialize MPSSE: %s\n", ErrorString(ctx));
+		fprintf(stderr, "Failed to initialize MPSSE: %s\n", ErrorString(ctx));
 	}
 
 	Close(ctx);
